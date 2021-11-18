@@ -28,6 +28,8 @@ button {
 
 img {
   display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 body {
@@ -51,8 +53,8 @@ body {
 }
 /* Section Header */
 .header {
-  padding-top: 24px;
-  padding-bottom: 25px;
+  /* padding-top: 24px;
+  padding-bottom: 25px; */
   border-bottom: 1px solid #ececec;
 }
 .flexer {
@@ -87,6 +89,9 @@ body {
   letter-spacing: 0.02em;
 }
 .header-link {
+  display: block;
+  padding-top: 24px;
+  padding-bottom: 25px;
   text-decoration: none;
   color: #000000;
 }
@@ -114,10 +119,27 @@ body {
 
 /* Section Hero */
 .hero {
-  padding-top: 200px;
-  background: var(--bg-color);
-  height: 600px;
+  padding: 0;
+  /* height: 600px; */
+  /* background-image: url("./images/hero-img.jpg");*/
+  background-color: var(--bg-color);
 }
+
+.hero-content {
+  padding-top: 200px;
+  margin: 0 auto;
+  width: 1600px;
+  background-image: linear-gradient(
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
+    url("../images/hero-img.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  padding-bottom: 200px;
+}
+
 .hero-title {
   width: 696px;
   text-align: center;
@@ -131,8 +153,7 @@ body {
 }
 .hero-button {
   display: block;
-  width: 200px;
-  height: 50px;
+  padding: 10px 32px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 30px;
@@ -147,6 +168,38 @@ body {
   color: #ffffff;
 }
 /*Section Features*/
+.features {
+  padding-top: 94px;
+}
+.features-item::before {
+  display: block;
+  content: "";
+  height: 120px;
+  width: 100%;
+  /* outline: 1px solid #212121; */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 70px;
+  background-color: #f5f4fa;
+  margin-bottom: 30px;
+  border-radius: 4px;
+}
+
+.icon-antenna::before {
+  background-image: url(../images/svg/antenna.svg);
+}
+
+.icon-clock::before {
+  background-image: url(../images/svg/clock.svg);
+}
+
+.icon-diagram::before {
+  background-image: url(../images/svg/diagram.svg);
+}
+
+.icon-astronaut::before {
+  background-image: url(../images/svg/astronaut.svg);
+}
 .features-list {
   display: flex;
   /*justify-content: space-between; */
@@ -173,9 +226,9 @@ body {
   letter-spacing: 0.03em;
 }
 /*Section Works*/
-.works {
+/* .works {
   padding-top: 0;
-}
+} */
 .works-title {
   font-weight: 700;
   font-size: 36px;
@@ -213,6 +266,7 @@ body {
   color: var(--caption-color);
   margin-bottom: 50px;
 }
+
 .command-list {
   display: flex;
   flex-wrap: wrap;
@@ -222,11 +276,14 @@ body {
 .command-item {
   border-radius: 5px;
   background-color: #ffffff;
-  box-shadow: 0 2px 2px rgba(2, 2, 2, 0.342);
   padding-bottom: 30px;
   margin-right: 30px;
   margin-top: 30px;
   flex-basis: calc((100% - 120px) / 4);
+  /* material shadow v1 */
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
 }
 .command-img-title {
   margin-top: 30px;
@@ -243,6 +300,16 @@ body {
   line-height: 1.187;
   text-align: center;
   letter-spacing: 0.03em;
+}
+/*section customers*/
+.customers-title {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.16;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: var(--caption-color);
+  margin-bottom: 50px;
 }
 /*Footer*/
 .footer {
@@ -303,7 +370,10 @@ body {
 .portfolio-button:focus {
   color: #ffffff;
   background-color: var(--accent-color);
-  box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.3);
+  /* shadow-middle */
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
 }
 
 .gallery-list {
@@ -313,9 +383,14 @@ body {
   margin-top: -30px;
 }
 .gallery-item {
+  cursor: pointer;
   margin-left: 30px;
   margin-top: 30px;
   flex-basis: calc((100% - 90px) / 3);
+}
+.gallery-item:hover {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 .gallery-caption {
   padding: 20px 24px;
