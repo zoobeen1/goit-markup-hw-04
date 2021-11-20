@@ -89,32 +89,56 @@ body {
   letter-spacing: 0.02em;
 }
 .header-link {
-  display: block;
-  padding-top: 24px;
-  padding-bottom: 25px;
+  /* display: block; */
+  padding-top: 32px;
+  /* padding-bottom: 24px; */
   text-decoration: none;
   color: #000000;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 80px;
 }
 .header-link:hover,
 .header-link:focus {
   color: var(--accent-color);
 }
-.head-address {
-  display: flex;
-  justify-content: space-between;
-  width: 307px;
+
+.header-link:hover::after {
+  content: "";
+  width: 100%;
+  height: 5px;
+  background-image: linear-gradient(var(--accent-color), var(--accent-color));
+  border-radius: 3px;
 }
-.head-address a {
+
+.head-address-list {
+  display: flex;
+}
+
+.head-address-item:last-child {
+  /* display: block; */
+  margin-left: 30px;
+}
+.head-address-link {
+  display: flex;
+  align-items: center;
   text-decoration: none;
   font-weight: 500;
   font-size: 14px;
   line-height: 1.2;
   letter-spacing: 0.02em;
   color: var(--text-color);
+  padding-top: 32px;
+  padding-bottom: 24px;
 }
-.head-address a:hover,
-.head-address a:focus {
+.head-address-link:hover,
+.head-address-link:focus {
   color: var(--accent-color);
+}
+.head-address-icon {
+  fill: currentColor;
+  margin-right: 10px;
 }
 
 /* Section Hero */
@@ -315,6 +339,14 @@ body {
 .footer {
   background-color: var(--bg-color);
   padding: 60px 0;
+  margin: 0 auto;
+}
+
+.footer-content {
+  display: flex;
+}
+.footer-left {
+  width: 231px;
 }
 .footer .logo {
   color: #ffffff;
@@ -337,6 +369,52 @@ body {
 .footer-link:hover,
 .footer-link:focus {
   color: var(--accent-color);
+}
+
+.invite {
+  margin-left: 68px;
+  padding: 12px;
+}
+.invite-title {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+.invite-list {
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+.invite-item + .invite-item {
+  margin-left: 10px;
+}
+
+.invite-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  /* padding: 3px; */
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.invite-link:hover,
+.invate-link:focus {
+  background-color: var(--accent-color);
+}
+
+.invite-icon {
+  /* width: 44px;
+  height: 44px; */
+  /* background: rgba(255, 255, 255, 0); */
+  fill: #ffffff;
 }
 
 /*Stranica Portfolio*/
